@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<!-- *********************************************************************************************
+Projeto Menu - Modelo de Menu em Html e Css efeito acordeon
+********************************************************************************************* -->
+
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8" />
+
+	<title>Menu</title>
+
+	<link rel="stylesheet" href="css/accordionmenu.css" type="text/css" media="screen" />
+
+	<style type="text/css">
+	
+body{background:url(img/bg.png) repeat;
+width:960px;
+margin:0 auto}
+	
+.footer{margin-top:50px;
+text-align:center;
+color:#666;
+font:bold 14px Arial}
+
+.footer a{color:#999;
+text-decoration:none}
+
+#wrapper-250{width:250px;margin:0 auto;}
+
+</style>
+
+<meta name="robots" content="noindex,follow" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+</head>
+
+<body>
+<div id="wrapper-250">
+
+		<div align="left">
+		  <ul class="accordion">
+		    
+		    <li id="one" class="files">
+		      
+		      <a href="#one">Configurações</a>
+		      
+		      <ul class="sub-menu">
+		        
+		        <li><a href="#"><em>1.1</em>Usuários</a></li>
+		        <li><a href="#"><em>1.2</em>Acessos<span>1.2</span></a></li>
+		        <li><a href="#"><em>1.3</em>Básicos<span>1.3</span></a></li>
+		        <li><a href="#"><em>1.4</em>Tabelas<span>1.4</span></a></li>
+		        <li><a href="#"><em>1.5</em>Workflow<span>1.5</span></a></li>
+	          </ul>
+	        </li>
+		    <li id="two" class="mail">
+		      
+		      <a href="#two">E-Social<span>2</span></a>
+		      
+		      <ul class="sub-menu">
+		        
+		        <li><a href="#"><em>2.1</em>Certificado<span>2.1</span></a></li>
+		        <li><a href="#"><em>2.2</em>Mensageria<span>2.2</span></a></li>
+	          </ul>
+	        </li>
+		    <li id="three" class="cloud">
+		      
+		      <a href="#three">Folha de Pagamento<span>3</span></a>
+		      
+		      <ul class="sub-menu">
+		        
+		        <li><a href="#"><em>3.1</em>Admissão<span>3.1</span></a></li>
+		        <li><a href="#"><em>3.2</em>Afastamentos<span>3.2</span></a></li>
+		        <li><a href="#"><em>3.3</em>Férias<span>3.3</span></a></li>
+		        <li><a href="#"><em>3.4</em>Rescisão<span>3.4</span></a></li>
+		        <li><a href="#"><em>3.5</em>Adiantamento<span>3.5</span></a></li>
+		        <li><a href="#"><em>3.6</em>Folha Mensal<span>3.6</span></a></li>
+	          </ul>
+	        </li>
+		    <li id="four" class="sign">
+		      
+		      <a href="#four">Ponto Digital</a>
+		      
+		      <ul class="sub-menu">
+		        
+		        <li><a href="#"><em>4.1</em>Básicos</a></li>
+		        <li><a href="#"><em>4.2</em>Parâmetros</a></li>
+		        <li><a href="#"><em>4.3</em>Processos</a></li>
+	          </ul>
+	        </li>
+	      </ul>
+  </div>
+</div>
+
+	<div align="left">
+	  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	  <script type="text/javascript">
+
+		$(document).ready(function() {
+
+			// Store variables
+			
+			var accordion_head = $('.accordion > li > a'),
+				accordion_body = $('.accordion li > .sub-menu');
+
+			// Open the first tab on load
+
+			accordion_head.first().addClass('active').next().slideDown('normal');
+
+			// Click function
+
+			accordion_head.on('click', function(event) {
+
+				// Disable header links
+				
+				event.preventDefault();
+
+				// Show and hide the tabs on click
+
+				if ($(this).attr('class') != 'active'){
+					accordion_body.slideUp('normal');
+					$(this).next().stop(true,true).slideToggle('normal');
+					accordion_head.removeClass('active');
+					$(this).addClass('active');
+				}
+
+			});
+
+		});
+
+	</script>
+	  
+    </div>
+</body>
+
+</html>
